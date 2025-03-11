@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V E L O C I T Y</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="asset/favicon.png" type="image/x-icon">
+
+    <!-- daisyUI + TailwindCSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Transition for smooth effect */
+        .navbar {
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+        }
+        
+        /* Background change when scrolled */
+        .scrolled {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+        }
+
+        /* Fix for mobile menu background issue */
+        #mobile-menu {
+            background-color: rgba(15, 15, 15, 0.95); /* Solid dark background */
+            z-index: 50; /* Ensures it's above navbar */
+        }
+    </style>
+</head>
+
+<body>
+  
+   <header class="h-[90vh] md:h-[100vh] text-white flex flex-col items-center md:px-16">
+
+    <nav id="navbar" class="navbar fixed top-0 left-0 w-full h-[10vh] flex items-center justify-between px-6 md:px-16 mb-4">
+        <!-- Logo -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 md:static md:translate-x-0">
+            <div class="title heading-text text-xl whitespace-nowrap">V E L O C I T Y</div>
+        </div>
+    
+        <!-- Hamburger Icon -->
+        <div class="md:hidden ml-auto">
+            <i id="hamburger" class="fa-solid fa-bars text-xl cursor-pointer"></i>
+        </div>
+    
+        <!-- Navigation Links -->
+        <div id="nav-li" class="hidden md:flex list-none space-x-12">
+            <a href=""><li>Courses</li></a>
+            <a href=""><li>Pricing</li></a>
+            <a href=""><li>Shop</li></a>
+            <a href=""><li>Member Area</li></a>
+        </div>
+    
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="fixed top-0 right-0 h-full w-[70vw] max-w-sm text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col space-y-6 p-6">
+            <button id="close-btn" class="text-2xl self-end">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <a href=""><li>Courses</li></a>
+            <a href=""><li>Pricing</li></a>
+            <a href=""><li>Shop</li></a>
+            <a href=""><li>Member Area</li></a>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.getElementById("navbar");
+            const hamburger = document.getElementById("hamburger");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const closeBtn = document.getElementById("close-btn");
+
+            // Scroll effect: Change navbar background
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+
+            // Open mobile drawer
+            hamburger.addEventListener("click", () => {
+                mobileMenu.classList.remove("translate-x-full");
+                navbar.classList.remove("scrolled"); // Remove blur effect when opening menu
+            });
+
+            // Close mobile drawer
+            closeBtn.addEventListener("click", () => {
+                mobileMenu.classList.add("translate-x-full");
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled"); // Reapply blur if scrolled
+                }
+            });
+
+            // Close if clicked outside
+            document.addEventListener("click", (event) => {
+                if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                    mobileMenu.classList.add("translate-x-full");
+                }
+            });
+        });
+    </script>
+
+    <!-- Banner Content -->
+    <div class="flex flex-col my-4 overflow-scroll mt-[20vh] sm:mt-[25vh] md:mt-[15vh]">
+        <div class="text-center text-4xl sm:text-6xl md:w-3/4 md:text-7xl md:text-left lg:text-8xl font-[850] my-4">
+            MARTIAL ARTS <br>
+            FROM IFRAJ <br>
+            WITH LOVE
+        </div>   
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const heading = document.querySelector(".heading-text");
+
+                function flickerEffect() {
+                    const randomOpacity = Math.random() * (1 - 0.5) + 0.5;
+                    heading.style.opacity = randomOpacity;
+                    heading.style.transition = "opacity 0.5s ease-in-out";
+
+                    setTimeout(() => {
+                        heading.style.opacity = "1";
+                    }, 2000);
+                }
+
+                setInterval(flickerEffect, 4000);
+            });
+        </script>
+
+        <div class="px-3 md:px-0 w-full mt-8 md:mt-0 text-center text-lg sm:text-xl/8 md:w-1/2 text-gray-200 md:text-left font-thin md:text-xl/8 lg:text-2xl my-4">
+            Come by and train with us in the heart of Berlin. A fantastic community with experienced coaches awaits you. Together, we bring out the best in you.
+        </div>
+
+        <div class="my-4 text-center md:text-left md:mt-12 lg:mt-0">
+            <button class="mt-16 sm:mt-24 md:mt-4 bg-white text-black p-4 hover:bg-gray-800 hover:text-white transition-all ease-linear duration-100">
+                DISCOVER ALL CLASSES
+            </button>
+        </div>
+    </div>
+    
+   </header>
+
+  
+
+   <main>
+
+    <!-- Our Courses -->
+    <section>
+
+      <div class="w-full px-16 flex flex-col justify-center my-16">
+        <div class="uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[750] text-center">Our Courses</div>
+        <div class=" text-gray-600 text-sm/5 md:text-lg/8 w-full md:w-2/3 mx-auto my-8 text-center">In our spacious 1500 m² training facility, we offer a wide variety of martial arts, fitness, and recovery programs. Whether you’re interested in MMA, Muay Thai, Brazilian Jiu-Jitsu, boxing, or wrestling, you’ll find the perfect place to train and grow. From beginners looking to get started to experienced athletes refining their skills, we have classes suited for all levels. To support your overall well-being, we also provide yoga sessions and professional massage services for relaxation and recovery.</div>
+      </div>
+
+      <!-- cards container -->
+
+     <div class="flex justify-center items-center z-10">
+
+        <!-- cards -->
+        <div class="grid justify-center items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto">
+
+            <div id="card" class="w-64 h-96 text-white text-3xl font-bold flex justify-center items-center flex-col  ">
+                KICKBOXING
+        
+                <div id="card-btn" class="text-sm uppercase bg-gray-800 transition-all ease-linear duration-100 w-fit py-2 px-4  opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:transition-all group-hover:ease-linear group-hover:duration-200 absolute top-2/3 cursor-pointer">
+                    learn more
+                </div>
+            </div>
+
+            
+            <div   id="card2"  class="w-64 h-96 text-white text-3xl font-bold flex justify-center items-center flex-col  ">
+                BOXING
+        
+                <div id="card-btn" class="text-sm uppercase bg-gray-800 transition-all ease-linear duration-100 w-fit py-2 px-4  opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:transition-all group-hover:ease-linear group-hover:duration-200 absolute top-2/3 cursor-pointer">
+                    learn more
+                </div>
+            </div>
+            
+
+            
+            <div id="card3" class="w-64 h-96 text-white text-3xl font-bold flex justify-center items-center flex-col  ">
+                JUDO
+        
+                <div id="card-btn" class="text-sm uppercase bg-gray-800 transition-all ease-linear duration-100 w-fit py-2 px-4  opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:transition-all group-hover:ease-linear group-hover:duration-200 absolute top-2/3 cursor-pointer">
+                    learn more
+                </div>
+            </div>
+
+
+            <div id="card4" class="w-64 h-96 text-white text-3xl font-bold flex justify-center items-center flex-col  ">
+                GYM
+        
+                <div id="card-btn" class="text-sm uppercase bg-gray-800 transition-all ease-linear duration-100 w-fit py-2 px-4  opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:transition-all group-hover:ease-linear group-hover:duration-200 absolute top-2/3 cursor-pointer">
+                    learn more
+                </div>
+            </div>
+
+            
+            <div id="card5" class="w-64 h-96 text-white text-3xl font-bold flex justify-center items-center flex-col  ">
+                FITNESS
+        
+                <div id="card-btn" class="text-sm uppercase bg-gray-800 transition-all ease-linear duration-100 w-fit py-2 px-4  opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:transition-all group-hover:ease-linear group-hover:duration-200 absolute top-2/3 cursor-pointer">
+                    learn more
+                </div>
+            </div>
+            
+
+            
+            <div id="card6" class="w-64 h-96 text-white text-3xl font-bold flex justify-center items-center flex-col  ">
+                DIET
+        
+                <div id="card-btn" class="text-sm uppercase bg-gray-800 transition-all ease-linear duration-100 w-fit py-2 px-4  opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:transition-all group-hover:ease-linear group-hover:duration-200 absolute top-2/3 cursor-pointer">
+                    learn more
+                </div>
+            </div>
+            
+           
+            </div>
+            
+        </div>
+
+     </div>
+    </section>
+   </main>
+</body>
+
+</html>
