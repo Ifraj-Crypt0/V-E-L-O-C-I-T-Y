@@ -375,4 +375,26 @@ height: 100vh;
 
 
 
+  #city{
+    background-image: url(asset/citylore.jpg);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment:fixed;
+    filter: grayscale(0.5);
+    min-height: 100vh;
+  }
+
+  #interior{
+
+    background-image: url(asset/lorembox.png);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment:fixed;
+    filter: grayscale(0.5);
+  }
+
   }
