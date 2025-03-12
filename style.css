@@ -370,7 +370,7 @@ height: 100vh;
       background-repeat: no-repeat;
       background-size: cover;
       background-origin: border-box; 
-     
+     background-attachment: fixed;
   }
 
 
