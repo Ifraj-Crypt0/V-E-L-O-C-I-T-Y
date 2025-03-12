@@ -9,7 +9,7 @@ body {
 }
 
 
-#nav-bar{z-index: 100;}
+#nav-bar{z-index: 1000;}
 
 .title {
     
@@ -332,6 +332,34 @@ body {
   }
 }
 
+#city{
+  background-image: url(asset/city.jpg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  filter: grayscale(0.5);
+}
+
+#aftercity{
+height: 100vh;
+}
+
+
+
+#interior{
+
+  background-image: url(asset/interior.jpg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  filter: grayscale(0.5);
+}
+
+
 
   @media screen and (max-width: 768px) {
 
@@ -344,6 +372,7 @@ body {
       background-origin: border-box; 
      
   }
+
 
 
   }
