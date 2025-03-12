@@ -350,7 +350,7 @@ height: 100vh;
 
 #interior{
 
-  background-image: url(asset/lorembox.png);
+  background-image: url(asset/lorembox1.jpg);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -388,7 +388,7 @@ height: 100vh;
 
   #interior{
 
-    background-image: url(asset/lorembox.png);
+    background-image: url(asset/lorembox1.jpg);
     
     background-position: center;
     background-repeat: no-repeat;
