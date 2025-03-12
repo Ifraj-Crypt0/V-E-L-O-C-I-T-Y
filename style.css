@@ -333,7 +333,7 @@ body {
 }
 
 #city{
-  background-image: url(asset/city.jpg);
+  background-image: url(asset/citylore.jpg);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -350,7 +350,7 @@ height: 100vh;
 
 #interior{
 
-  background-image: url(asset/interior.jpg);
+  background-image: url(asset/lorembox.png);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
